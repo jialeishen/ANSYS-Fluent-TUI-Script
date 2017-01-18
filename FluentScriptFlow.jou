@@ -1,7 +1,7 @@
 define/models/viscous/ke-standard yes
 define/models/species/species-transport yes carbon-monoxide-air
 define/materials/change-create/carbon-monoxide-air/carbon-monoxide-air yes 2 co air 0 0 no no no no no no
-define/user-defined/interpreted-functions/"S:\Fluent case\yuying\2\case\udf_inlet_EW.c" "cpp" 10000 no
+define/user-defined/interpreted-functions/"udf_inlet_EW.c" "cpp" 10000 no
 define/boundary-conditions/zone-type/east velocity-inlet
 define/boundary-conditions/zone-type/west pressure-outlet
 define/boundary-conditions/zone-type/north symmetry
@@ -13,13 +13,13 @@ solve/set/limits 1 5e+10 1 5000 1e-14 1e-20 1e+07
 solve/monitors/residual/convergence-criteria 0.00001 0.00001 0.00001 0.00001 0.00001 0.00001
 solve/initialize/compute-defaults/velocity-inlet east
 solve/iterate 3000
-file/write-case-data/"S:\Fluent case\yuying\2\case\R-EW-1.cas"
+file/write-case-data/"R-EW-1.cas"
 
-file/replace-mesh/"S:\Fluent case\yuying\2\case\R-EW-1.msh"
+file/replace-mesh/"R-EW-1.msh"
 define/models/viscous/ke-standard yes
 define/models/species/species-transport yes carbon-monoxide-air
 define/materials/change-create/carbon-monoxide-air/carbon-monoxide-air yes 2 co air 0 0 no no no no no no
-define/user-defined/interpreted-functions/"S:\Fluent case\yuying\2\case\udf_inlet_EW.c" "cpp" 10000 no
+define/user-defined/interpreted-functions/"udf_inlet_EW.c" "cpp" 10000 no
 define/boundary-conditions/zone-type/east velocity-inlet
 define/boundary-conditions/zone-type/west pressure-outlet
 define/boundary-conditions/zone-type/north pressure-outlet
@@ -34,13 +34,13 @@ solve/set/limits 1 5e+10 1 5000 1e-14 1e-20 1e+07
 solve/monitors/residual/convergence-criteria 0.00001 0.00001 0.00001 0.00001 0.00001 0.00001
 solve/initialize/compute-defaults/velocity-inlet east
 solve/iterate 3000
-file/write-case-data/"S:\Fluent case\yuying\2\case\R-EW-1-45.cas"
+file/write-case-data/"R-EW-1-45.cas"
 
-file/replace-mesh/"S:\Fluent case\yuying\2\case\R-EW-1.msh"
+file/replace-mesh/"R-EW-1.msh"
 define/models/viscous/ke-standard yes
 define/models/species/species-transport yes carbon-monoxide-air
 define/materials/change-create/carbon-monoxide-air/carbon-monoxide-air yes 2 co air 0 0 no no no no no no
-define/user-defined/interpreted-functions/"S:\Fluent case\yuying\2\case\udf_inlet_EW.c" "cpp" 10000 no
+define/user-defined/interpreted-functions/"udf_inlet_EW.c" "cpp" 10000 no
 define/boundary-conditions/zone-type/south velocity-inlet
 define/boundary-conditions/zone-type/north pressure-outlet
 define/boundary-conditions/zone-type/east symmetry
@@ -52,4 +52,4 @@ solve/set/limits 1 5e+10 1 5000 1e-14 1e-20 1e+07
 solve/monitors/residual/convergence-criteria 0.00001 0.00001 0.00001 0.00001 0.00001 0.00001
 solve/initialize/compute-defaults/velocity-inlet south
 solve/iterate 3000
-file/write-case-data/"S:\Fluent case\yuying\2\case\R-EW-1-90.cas"
+file/write-case-data/"R-EW-1-90.cas"
