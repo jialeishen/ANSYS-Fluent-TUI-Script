@@ -1,0 +1,55 @@
+define/models/viscous/ke-standard yes
+define/models/species/species-transport yes carbon-monoxide-air
+define/materials/change-create/carbon-monoxide-air/carbon-monoxide-air yes 2 co air 0 0 no no no no no no
+define/user-defined/interpreted-functions/"S:\Fluent case\yuying\2\case\udf_inlet_EW.c" "cpp" 10000 no
+define/boundary-conditions/zone-type/east velocity-inlet
+define/boundary-conditions/zone-type/west pressure-outlet
+define/boundary-conditions/zone-type/north symmetry
+define/boundary-conditions/zone-type/south symmetry
+define/boundary-conditions/velocity-inlet/east no no yes yes yes yes "udf" "velocity_profile" no 0 no 300 yes yes yes "udf" "k_profile" yes yes "udf" "e_profile" no no 0
+solve/set/discretization-scheme k 1 epsilon 1
+solve/set/equations/flow yes ke yes species-0 no temperature no
+solve/set/limits 1 5e+10 1 5000 1e-14 1e-20 1e+07
+solve/monitors/residual/convergence-criteria 0.00001 0.00001 0.00001 0.00001 0.00001 0.00001
+solve/initialize/compute-defaults/velocity-inlet east
+solve/iterate 3000
+file/write-case-data/"S:\Fluent case\yuying\2\case\R-EW-1.cas"
+
+file/replace-mesh/"S:\Fluent case\yuying\2\case\R-EW-1.msh"
+define/models/viscous/ke-standard yes
+define/models/species/species-transport yes carbon-monoxide-air
+define/materials/change-create/carbon-monoxide-air/carbon-monoxide-air yes 2 co air 0 0 no no no no no no
+define/user-defined/interpreted-functions/"S:\Fluent case\yuying\2\case\udf_inlet_EW.c" "cpp" 10000 no
+define/boundary-conditions/zone-type/east velocity-inlet
+define/boundary-conditions/zone-type/west pressure-outlet
+define/boundary-conditions/zone-type/north pressure-outlet
+define/boundary-conditions/zone-type/south velocity-inlet
+define/boundary-conditions/velocity-inlet/east yes yes yes yes "udf" "velocity_profile" no 0 yes no -1 no 1 no 0 no 300 yes yes yes "udf" "k_profile" yes yes "udf" "e_profile" no no 0
+define/boundary-conditions/velocity-inlet/south yes yes yes yes "udf" "velocity_profile" no 0 yes no -1 no 1 no 0 no 300 yes yes yes "udf" "k_profile" yes yes "udf" "e_profile" no no 0
+define/boundary-conditions/pressure-outlet/west no 0 no 300 yes yes no 1 no -1 no 0 no no yes 5 10 no no 0 no no no
+define/boundary-conditions/pressure-outlet/north no 0 no 300 yes yes no 1 no -1 no 0 no no yes 5 10 no no 0 no no no
+solve/set/discretization-scheme k 1 epsilon 1
+solve/set/equations/flow yes ke yes species-0 no temperature no
+solve/set/limits 1 5e+10 1 5000 1e-14 1e-20 1e+07
+solve/monitors/residual/convergence-criteria 0.00001 0.00001 0.00001 0.00001 0.00001 0.00001
+solve/initialize/compute-defaults/velocity-inlet east
+solve/iterate 3000
+file/write-case-data/"S:\Fluent case\yuying\2\case\R-EW-1-45.cas"
+
+file/replace-mesh/"S:\Fluent case\yuying\2\case\R-EW-1.msh"
+define/models/viscous/ke-standard yes
+define/models/species/species-transport yes carbon-monoxide-air
+define/materials/change-create/carbon-monoxide-air/carbon-monoxide-air yes 2 co air 0 0 no no no no no no
+define/user-defined/interpreted-functions/"S:\Fluent case\yuying\2\case\udf_inlet_EW.c" "cpp" 10000 no
+define/boundary-conditions/zone-type/south velocity-inlet
+define/boundary-conditions/zone-type/north pressure-outlet
+define/boundary-conditions/zone-type/east symmetry
+define/boundary-conditions/zone-type/west symmetry
+define/boundary-conditions/velocity-inlet/south no no yes yes yes yes "udf" "velocity_profile" no 0 no 300 yes yes yes "udf" "k_profile" yes yes "udf" "e_profile" no no 0
+solve/set/discretization-scheme k 1 epsilon 1
+solve/set/equations/flow yes ke yes species-0 no temperature no
+solve/set/limits 1 5e+10 1 5000 1e-14 1e-20 1e+07
+solve/monitors/residual/convergence-criteria 0.00001 0.00001 0.00001 0.00001 0.00001 0.00001
+solve/initialize/compute-defaults/velocity-inlet south
+solve/iterate 3000
+file/write-case-data/"S:\Fluent case\yuying\2\case\R-EW-1-90.cas"
