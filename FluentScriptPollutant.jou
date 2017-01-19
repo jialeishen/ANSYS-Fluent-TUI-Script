@@ -1,5 +1,6 @@
 file/read-case-data "R-EW-1.cas"
 define/boundary-conditions/fluid fluid mixture no yes 0 0 0 0 0 0 1 no yes "udf_source_pollutant" 0 no no no 0 no 0 no 0 no 0 no 0 no 1 no no no no
 solve/set/equations/flow no ke no species-0 yes temperature no 
+solve/monitors/residual/convergence-criteria 0.00001
 solve/iterate 200
 file/write-case-data/"R-EW-1-pollutant.cas"
