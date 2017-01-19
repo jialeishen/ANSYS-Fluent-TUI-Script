@@ -1,0 +1,3 @@
+file/read-case-data "R-EW-1-pollutant.cas"
+surface/plane-bounded plane-pedestrian 532 484 2 860 484 2 860 500 2 no
+file/export/tecplot R-EW-1-pollutant (plane-pedestrian) velocity-magnitude x-velocity y-velocity z-velocity co q 
