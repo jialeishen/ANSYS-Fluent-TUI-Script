@@ -1,0 +1,5 @@
+surface/plane-bounded slice0 720 918 0 740 918 0 740 918 2 no
+surface/plane-bounded slice1 720 919 0 740 919 0 740 919 2 no
+surface/plane-bounded slice2 720 920 0 740 920 0 740 920 2 no
+...
+report/surface-integrals/facet-avg (slice0 slice1 slice2...) co yes "barcelona.srp"
